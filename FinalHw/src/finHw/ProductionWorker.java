@@ -40,4 +40,12 @@ public class ProductionWorker extends Employee {
 	public void sethPayRate(double hPayRate) {
 		this.hPayRate = hPayRate;
 	}
+	public String toString(){
+		return "Worker\n"
+				+ " Employee Name: " + empInfo.getName() + "\n"
+				+ " Employee ID is: " + empInfo.getEmployeeNumber() + "\n"
+				+ " HireDate is: " + empInfo.getHireDate() + "\n"
+				+ " PayRate is: " + gethPayRate() + "\n"
+				+ " The Shift is: " + getShift() +"\n\n\n";
+	}
 }

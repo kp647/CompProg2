@@ -30,15 +30,34 @@ public class Runner {
 //
 //	public static void conditions() throws IOException {
 			int choice=0;
+			String NaM = null, Date = null;
+			int i = 0,j = 0;
+			double k = 0;
+			Employee w1 = new Employee();
+			ProductionWorker p1 = new ProductionWorker();
+			try {
+				w1 = new Employee(NaM,i,Date);
+			} catch (InvalidEmployeeNumber e2) {
+				// TODO Auto-generated catch block
+				e2.printStackTrace();
+			}
+			 try {
+				p1 = new ProductionWorker(w1,j,k);
+			} catch (InvalidShift | InvalidePayRate e1) {
+				// TODO Auto-generated catch block
+				e1.printStackTrace();
+			}
+			
 			Scanner ch = new Scanner (System.in);
 		while (choice!=5){
 			showMenu();
 			choice= ch.nextInt();
+			try{
 		if (choice==1){
 			Scanner ein = new Scanner (System.in);
-			String NaM, Date;
-			int i,j;
-			double k;
+//			String NaM, Date;
+//			int i,j;
+//			double k;
 			System.out.println("This part of the program will ask for employee info");
 			System.out.println("please Enter the Employee Name");
 			NaM= ein.nextLine();
@@ -50,10 +69,41 @@ public class Runner {
 			j= ein.nextInt();
 			System.out.println("please Enter the PayRate");
 			k=ein.nextDouble();
-			try {
-				Employee w1 = new Employee(NaM,i,Date);
-				ProductionWorker p1 = new ProductionWorker(w1,j,k);
-			}
+			//try {
+				 w1 = new Employee(NaM,i,Date);
+				 p1 = new ProductionWorker(w1,j,k);
+			//}
+//			catch(InvalidEmployeeNumber e){
+//				System.out.println(e.getMessage());
+//			}
+//			catch(InvalidShift e){
+//				System.out.println(e.getMessage());
+//			}
+//			catch(InvalidePayRate e){
+//				System.out.println(e.getMessage());
+//			}
+//			catch(Exception e){
+//				System.out.println(e.getMessage());
+//			}
+			
+			
+		}
+		if (choice ==2){
+			FileWrite c = new FileWrite();
+			
+		}
+		if (choice ==3){
+			//Employee w1=null;
+			//ProductionWorker p1=null ;
+			System.out.println(p1.toString());
+//			System.out.println("Name = "+ w1.getName());
+//			System.out.println("ID = "+w1.getEmployeeNumber());
+//			System.out.println("HireDate = "+w1.getHireDate());
+//			System.out.println("PayRate $ "+p1.gethPayRate());
+//			System.out.println("Shift = "+p1.getShift());
+//			
+		}
+		}
 			catch(InvalidEmployeeNumber e){
 				System.out.println(e.getMessage());
 			}
@@ -66,23 +116,6 @@ public class Runner {
 			catch(Exception e){
 				System.out.println(e.getMessage());
 			}
-			
-			
-		}
-		if (choice ==2){
-			FileWrite c = new FileWrite();
-			
-		}
-		if (choice ==3){
-			Employee w1=null;
-			ProductionWorker p1=null ;
-			System.out.println("Name = "+ w1.getName());
-			System.out.println("ID = "+p1.getEmployeeNumber());
-			System.out.println("HireDate = "+p1.getHireDate());
-			System.out.println("PayRate $ "+p1.gethPayRate());
-			System.out.println("Shift = "+p1.getShift());
-			
-		}
 		}
 		
 		
