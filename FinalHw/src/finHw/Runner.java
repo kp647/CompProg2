@@ -18,17 +18,7 @@ public class Runner {
 	 * @throws IOException 
 	 */
 	public static void main(String[] args) throws IOException {
-//		Scanner in = new Scanner (System.in);
-//		int choice =0;
-//		System.out.println("HireDate = "+p1.empInfo.getHireDate());
-//		conditions();
-//		
-//		}
-//		
-//
-//	
-//
-//	public static void conditions() throws IOException {
+
 			int choice=0;
 			String NaM = null, Date = null;
 			int i = 0,j = 0;
@@ -55,9 +45,7 @@ public class Runner {
 			try{
 		if (choice==1){
 			Scanner ein = new Scanner (System.in);
-//			String NaM, Date;
-//			int i,j;
-//			double k;
+
 			System.out.println("This part of the program will ask for employee info");
 			System.out.println("please Enter the Employee Name");
 			NaM= ein.nextLine();
@@ -69,6 +57,7 @@ public class Runner {
 			j= ein.nextInt();
 			System.out.println("please Enter the PayRate");
 			k=ein.nextDouble();
+			
 			//try {
 				 w1 = new Employee(NaM,i,Date);
 				 p1 = new ProductionWorker(w1,j,k);
@@ -93,15 +82,9 @@ public class Runner {
 			
 		}
 		if (choice ==3){
-			//Employee w1=null;
-			//ProductionWorker p1=null ;
+			
 			System.out.println(p1.toString());
-//			System.out.println("Name = "+ w1.getName());
-//			System.out.println("ID = "+w1.getEmployeeNumber());
-//			System.out.println("HireDate = "+w1.getHireDate());
-//			System.out.println("PayRate $ "+p1.gethPayRate());
-//			System.out.println("Shift = "+p1.getShift());
-//			
+			
 		}
 		}
 			catch(InvalidEmployeeNumber e){

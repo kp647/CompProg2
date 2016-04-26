@@ -47,6 +47,13 @@ public class Employee {
 	public void setHireDate(String hireDate) {
 		this.hireDate = hireDate;
 	}
+	public String toString(){
+		return "Worker\n"
+				+ " Employee Name: " + getName() + "\n"
+				+ " Employee ID is: " + getEmployeeNumber() + "\n"
+				+ " HireDate is: " + getHireDate() + "\n";
+				
+	}
 	
 
 }
