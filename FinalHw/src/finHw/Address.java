@@ -1,5 +1,5 @@
 package finHw;
-//used for agregration
+//used for agrregration
 public class Address
 {
 	String city;

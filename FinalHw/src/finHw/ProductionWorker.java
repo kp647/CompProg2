@@ -1,7 +1,7 @@
 package finHw;
 
 
-public class ProductionWorker extends Employee {
+public class ProductionWorker extends Employee {//Inheritance
 	private int shift;
 	private double hPayRate;
 	Employee empInfo;
