@@ -13,20 +13,22 @@ public class Employee {
 	private String name;
 	private int employeeNumber; 
 	private String hireDate;
-
+	private Address add;//used for aggregation
 	
 	
 	public Employee(){
 		name= "Not Available";
-		employeeNumber=-1;
-		hireDate= "";	
+		employeeNumber=1;
+		hireDate= "";
+		add = null;
 	}
-	public Employee(String name, int employeeNumber, String hireDate) throws InvalidEmployeeNumber{
+	public Employee(String name, int employeeNumber, String hireDate,Address addd) throws InvalidEmployeeNumber{
 		this.name = name;
 		if(employeeNumber<0)
 			 throw new InvalidEmployeeNumber(employeeNumber);
 		this.employeeNumber = employeeNumber;
 		this.hireDate = hireDate;
+		add=addd;
 	}
 	public String getName() {
 		return name;
@@ -51,7 +53,8 @@ public class Employee {
 		return "Worker\n"
 				+ " Employee Name: " + getName() + "\n"
 				+ " Employee ID is: " + getEmployeeNumber() + "\n"
-				+ " HireDate is: " + getHireDate() + "\n";
+				+ " HireDate is: " + getHireDate() + "\n"
+				+ " Employee address is " +add.toString();
 				
 	}
 	

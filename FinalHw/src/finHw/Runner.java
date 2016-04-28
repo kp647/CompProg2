@@ -25,8 +25,10 @@ public class Runner {
 			double k = 0;
 			Employee w1 = new Employee();
 			ProductionWorker p1 = new ProductionWorker();
+			Address abb = new Address();
 			try {
-				w1 = new Employee(NaM,i,Date);
+				//abb = new Address(ct,sta,zi,cnt);
+				w1 = new Employee(NaM,i,Date,abb);
 			} catch (InvalidEmployeeNumber e2) {
 				// TODO Auto-generated catch block
 				e2.printStackTrace();
@@ -39,7 +41,7 @@ public class Runner {
 			}
 			
 			Scanner ch = new Scanner (System.in);
-		while (choice!=5){
+		while (choice!=7){
 			showMenu();
 			choice= ch.nextInt();
 			try{
@@ -57,9 +59,19 @@ public class Runner {
 			j= ein.nextInt();
 			System.out.println("please Enter the PayRate");
 			k=ein.nextDouble();
+			System.out.println("please Enter the City");
+			String cc=ein.nextLine();
+			String city=ein.nextLine();
+			System.out.println("please Enter the State");
+			String state=ein.nextLine();
+			System.out.println("please Enter the Zipcode");
+			String zipCode=ein.nextLine();
+			System.out.println("please Enter the Country");
+			String country=ein.nextLine();
+			Address a = new Address(city,state,zipCode,country);
 			
 			//try {
-				 w1 = new Employee(NaM,i,Date);
+				 w1 = new Employee(NaM,i,Date,a);
 				 p1 = new ProductionWorker(w1,j,k);
 			//}
 //			catch(InvalidEmployeeNumber e){
@@ -78,13 +90,18 @@ public class Runner {
 			
 		}
 		if (choice ==2){
-			FileWrite c = new FileWrite();
 			
+			ConV f = new ConV();
 		}
 		if (choice ==3){
 			
-			System.out.println(p1.toString());
+			System.out.println(p1);
 			
+		}
+		if (choice ==4){
+			Employee e1 = new ProductionWorker(w1,j,k);//polymorphism
+			System.out.println(e1);//Overriding super To string
+			System.out.println("This shows Polymorphism is present in the code");
 		}
 		}
 			catch(InvalidEmployeeNumber e){
@@ -105,10 +122,11 @@ public class Runner {
 	}
 
 	private static void showMenu() {
+				System.out.println("This is a MultiPurpose Application");
 		  		System.out.println(" 1. Enter hourly worker Info ");
-		 		System.out.println(" 2. Get Secret Message ");
+		 		System.out.println(" 2. Convert Text Line to all Upper Case  ");
 		 		System.out.println(" 3. Display last worker INFO  ");
-		 		System.out.println(" 4. Use Division ");
+		 		System.out.println(" 4. To show Employee Info using Polymorphism ");
 		 		System.out.println(" 5. To Quit ");
 		 		System.out.println(" ");
 		 		System.out.print(" Please enter your choice: ");   
