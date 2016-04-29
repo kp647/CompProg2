@@ -10,7 +10,7 @@ import java.util.Scanner;
 /**
  * @author Kevin Patel
  *
- */
+ *///Exception Handling in this program
 public class Runner {
 
 	/**
@@ -25,15 +25,15 @@ public class Runner {
 			double k = 0;
 			Employee w1 = new Employee();
 			ProductionWorker p1 = new ProductionWorker();
-			Address abb = new Address();
-			try {
-				//abb = new Address(ct,sta,zi,cnt);
+			Address abb = new Address();//Aggregation
+			try {//exception handling****** 2
+				
 				w1 = new Employee(NaM,i,Date,abb);
 			} catch (InvalidEmployeeNumber e2) {
 				// TODO Auto-generated catch block
 				e2.printStackTrace();
 			}
-			 try {
+			 try {//exception handling*******2
 				p1 = new ProductionWorker(w1,j,k);
 			} catch (InvalidShift | InvalidePayRate e1) {
 				// TODO Auto-generated catch block
@@ -44,7 +44,7 @@ public class Runner {
 		while (choice!=7){
 			showMenu();
 			choice= ch.nextInt();
-			try{
+			try{//exception handling******2
 		if (choice==1){
 			Scanner ein = new Scanner (System.in);
 
@@ -68,24 +68,12 @@ public class Runner {
 			String zipCode=ein.nextLine();
 			System.out.println("please Enter the Country");
 			String country=ein.nextLine();
-			Address a = new Address(city,state,zipCode,country);
+			Address a = new Address(city,state,zipCode,country);//aggregation
 			
-			//try {
+			
 				 w1 = new Employee(NaM,i,Date,a);
 				 p1 = new ProductionWorker(w1,j,k);
-			//}
-//			catch(InvalidEmployeeNumber e){
-//				System.out.println(e.getMessage());
-//			}
-//			catch(InvalidShift e){
-//				System.out.println(e.getMessage());
-//			}
-//			catch(InvalidePayRate e){
-//				System.out.println(e.getMessage());
-//			}
-//			catch(Exception e){
-//				System.out.println(e.getMessage());
-//			}
+			
 			
 			
 		}
@@ -95,14 +83,14 @@ public class Runner {
 		}
 		if (choice ==3){
 			
-			System.out.println(p1);
+			System.out.println(p1+"\n\n\n");
 			
 		}
 		if (choice ==4){
-			Employee e1 = new ProductionWorker(w1,j,k);//polymorphism
+			Employee e1 = new ProductionWorker(w1,j,k);//polymorphism****
 			System.out.println();
-			System.out.println(e1);//Overriding super To string
-			System.out.println("This shows Polymorphism is present in the code\n\n\n");
+			System.out.println(e1);//Overriding employee To string
+			System.out.println("This shows Polymorphism is used to display this worker\n\n\n");
 		}
 		if (choice ==5){
 			System.out.println("\n\n\nPlease enter any number you would like to be doubled");
@@ -123,7 +111,7 @@ public class Runner {
 			
 		}
 		}
-			catch(InvalidEmployeeNumber e){
+			catch(InvalidEmployeeNumber e){//Exception Handling
 				System.out.println(e.getMessage());
 			}
 			catch(InvalidShift e){

@@ -1,6 +1,6 @@
 package finHw;
-
-public class pool implements size {
+//kevin
+public class pool implements container {//Class implements size and uses their Abstract methods
 	
 	private double length, width, height;
  public pool(double l,double w, double h){

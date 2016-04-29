@@ -1,7 +1,11 @@
 package finHw;
 import java.util.*;
 import java.io.*;
-public class ConV {
+/**
+ * @author Kevin
+ *
+ */
+public class ConV {//file input and output number 1
 	public ConV() throws IOException{
 		String fileName, outputfile;
 		Scanner keyboard = new Scanner (System.in);
