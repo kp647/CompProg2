@@ -2,6 +2,7 @@ package PolyHW;
 
 public class CargoShip extends Ship{
 	private int capacity;
+	private int num;
 	public CargoShip(){
 	super();
 	capacity=0;
